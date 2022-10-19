@@ -18,17 +18,17 @@ return new class extends Migration
             $table->string('product_name');
             $table->float('import_price');
             $table->float('price');
-            $table->integer('amount');
+            $table->float('amount');
             $table->integer('status');
             $table->string('description');
-            $table->integer('category_id')->unsigned();
-            $table->string('brand');
+            $table->bigInteger('category_id')->unsigned();
+            $table->bigInteger('brand');
             $table->timestamps();
         });
         Schema::create('image', function (Blueprint $table) {
             $table->id();
             $table->string('image_name');
-            $table->integer('product_id')->unsigned();
+            $table->bigInteger('product_id')->unsigned();
             $table->integer('image_type');
             $table->timestamps();
         });
@@ -43,7 +43,7 @@ return new class extends Migration
         });
         Schema::create('order', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id')->unsigned();
+            $table->bigInteger('user_id')->unsigned();
             $table->string('user_address');
             $table->string('vendor_address');
             $table->integer('total');
@@ -53,7 +53,7 @@ return new class extends Migration
         });
         Schema::create('orderDetail', function (Blueprint $table) {
             $table->id();
-            $table->integer('product_id')->unsigned();
+            $table->bigInteger('product_id')->unsigned();
             $table->integer('total');
             $table->integer('amount');
             $table->timestamps();
