@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('description');
             $table->bigInteger('category_id')->unsigned();
             $table->bigInteger('brand');
+
             $table->timestamps();
         });
         Schema::create('image', function (Blueprint $table) {
