@@ -16,7 +16,8 @@
         </div>
     </section>
     <!-- Breadcrumb Section End -->
-
+    <input type="text" wire:model="name">
+    {{ $name }}
     <!-- Shopping Cart Section Begin -->
     <section class="shopping-cart spad">
         <div class="container">
